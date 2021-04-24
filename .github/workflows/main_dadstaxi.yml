@@ -31,10 +31,27 @@ jobs:
 
     - name: setup regional logo
       run: cp logo-au.png logo.png
-
     - name: Run Azure webapp deploy action using current context 
       uses: azure/webapps-deploy@v2
       with:
         app-name: DadsTaxi-au
+        slot-name: Production
+        package: .
+
+    - name: setup regional logo
+      run: cp logo-us.png logo.png
+    - name: Run Azure webapp deploy action using current context 
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: DadsTaxi-us
+        slot-name: Production
+        package: .
+
+    - name: setup regional logo
+      run: cp logo-eu.png logo.png
+    - name: Run Azure webapp deploy action using current context 
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: DadsTaxi-westeurope
         slot-name: Production
         package: .
