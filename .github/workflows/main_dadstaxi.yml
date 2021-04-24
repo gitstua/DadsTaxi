@@ -22,10 +22,19 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALSDB964D86 }}
 
-    - name: Run Azure webapp deploy action using publish profile credentials
+    - name: Run Azure webapp deploy action using current context
       uses: azure/webapps-deploy@v2
       with:
         app-name: DadsTaxi
         slot-name: Production
         package: .
 
+    - name: setup regional logo
+      run: cp logo-au.png logo.png
+
+    - name: Run Azure webapp deploy action using current context 
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: DadsTaxi-au
+        slot-name: Production
+        package: .
