@@ -1,0 +1,11 @@
+#logo {
+  position: absolute;
+  top: 10px;
+  background-color: yellow;
+  height: 12%;
+  right: 10px;
+  width: 100%;
+}
+#buttons{
+    left:10px;  
+}

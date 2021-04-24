@@ -13,6 +13,7 @@
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 
     <!-- Add reference to the animation module. -->
@@ -116,21 +117,28 @@
 <body onload="GetMap()">
     <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
 
-    <div style="position:absolute;top:10px;left:10px;background-color:white;padding:5px;">
+
+    <div id="logo">
+        <img src="logo.png" style="height: 100%;" />
+        <!-- <div style="position:absolute;top:10px;left:10px;background-color:white;padding:5px;"> -->
+       <div id="buttons">
+           <!-- <ul>
+            <li><input type="button" value="Play together" onclick="playAnimations('together');" /></li>
+            <li><input type="button" value="Play sequentially" onclick="playAnimations('sequential');" /></li>
+            <li><input type="button" value="Play interval (100ms)" onclick="playAnimations('interval');" /></li>
+            <li><input type="button" value="Stop" onclick="stopAnimations();" /></li>
+        </ul> -->
         <input type="button" value="Play together" onclick="playAnimations('together');" />
         <input type="button" value="Play sequentially" onclick="playAnimations('sequential');" />
         <input type="button" value="Play interval (100ms)" onclick="playAnimations('interval');" />
         <input type="button" value="Stop" onclick="stopAnimations();" />
+</div>
     </div>
 
-    <div id="logo" style="position:absolute;top:10px;right:10px;background-color:yellow;height:12%;">
-        <img src="logo.png" style="height: 100%;" />
-    </div>
-
-    <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
+    <!-- <fieldset style="width:calc(100% - 30px);min-width:290px;margin-top:10px;">
         <legend><h1 style="font-size:16px">Animate multiple points</h1></legend>
         This sample shows how to animate multiple points on the map. 
         This sample uses the open source <a href="https://github.com/Azure-Samples/azure-maps-animations" target="_blank">Azure Maps Animation module</a>
-    </fieldset>
+    </fieldset> -->
 </body>
 </html>
