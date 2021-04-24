@@ -24,3 +24,8 @@
     border-radius: 12px;
     /* height:1.2em; */
 }
+
+img.circleImage{
+  background: pink;
+  border: 1px solid white;
+}
