@@ -27,7 +27,7 @@ jobs:
 
     - name: add build time to healthcheck
       run: |
-        echo 'Build time: $(date)' | public/healthcheck.txt
+        echo "Build time: $(date)" >> public/healthcheck.txt
 
     - name: Run Azure webapp deploy action using current context
       uses: azure/webapps-deploy@v2
