@@ -1,0 +1,20 @@
+{
+    "routes": [
+      {
+        "path_prefix": "/",
+        "policies": { "unauthenticated_action": "RedirectToLoginPage" }
+      },
+      {
+        "path_prefix": "/test.html",
+        "policies": { "unauthenticated_action": "AllowAnonymous" }
+      },
+      {
+        "path_prefix": "/test2.html",
+        "policies": { "unauthenticated_action": "AllowAnonymous" }
+      },
+      {
+        "path_prefix": "/public/",
+        "policies": { "unauthenticated_action": "AllowAnonymous" }
+      }
+    ]
+  }
