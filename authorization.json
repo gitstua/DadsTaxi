@@ -5,6 +5,14 @@
         "policies": { "unauthenticated_action": "RedirectToLoginPage" }
       },
       {
+        "path_prefix": "/logo.png",
+        "policies": { "unauthenticated_action": "AllowAnonymous" }
+      },
+      {
+        "path_prefix": "/style.css",
+        "policies": { "unauthenticated_action": "AllowAnonymous" }
+      },
+      {
         "path_prefix": "/test.html",
         "policies": { "unauthenticated_action": "AllowAnonymous" }
       },
