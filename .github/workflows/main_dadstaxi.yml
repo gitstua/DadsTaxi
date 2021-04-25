@@ -29,8 +29,8 @@ jobs:
         slot-name: Production
         package: .
 
-    - name: setup regional logo
-      run: cp logo-au.png logo.png
+    - name: setup regional logo AU
+      run: cp icons/logo-au.png logo.png
     - name: Run Azure webapp deploy action using current context 
       uses: azure/webapps-deploy@v2
       with:
@@ -38,8 +38,8 @@ jobs:
         slot-name: Production
         package: .
 
-    - name: setup regional logo
-      run: cp logo-us.png logo.png
+    - name: setup regional logo US
+      run: cp icons/logo-us.png logo.png
     - name: Run Azure webapp deploy action using current context 
       uses: azure/webapps-deploy@v2
       with:
@@ -47,8 +47,8 @@ jobs:
         slot-name: Production
         package: .
 
-    - name: setup regional logo
-      run: cp logo-eu.png logo.png
+    - name: setup regional logo EU
+      run: cp icons/logo-eu.png logo.png
     - name: Run Azure webapp deploy action using current context 
       uses: azure/webapps-deploy@v2
       with:
