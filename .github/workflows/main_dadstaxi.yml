@@ -22,9 +22,6 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALSDB964D86 }}
 
-    - name: setup anonymous page load time file 
-      run: cp index.html public/index.html
-
     - name: add build time to healthcheck
       run: |
         echo "Build time: $(date)" >> public/healthcheck.txt
