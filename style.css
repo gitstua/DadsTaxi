@@ -29,3 +29,9 @@ img.circleImage{
   background: pink;
   border: 1px solid white;
 }
+
+#messages{
+  padding-left: 20px;
+  background-color: white;
+  font-size: xxx-large;
+}
