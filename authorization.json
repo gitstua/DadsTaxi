@@ -9,6 +9,10 @@
         "policies": { "unauthenticated_action": "AllowAnonymous" }
       },
       {
+        "path_prefix": "/favicon.ico",
+        "policies": { "unauthenticated_action": "AllowAnonymous" }
+      },
+      {
         "path_prefix": "/style.css",
         "policies": { "unauthenticated_action": "AllowAnonymous" }
       },
@@ -18,6 +22,10 @@
       },
       {
         "path_prefix": "/test2.html",
+        "policies": { "unauthenticated_action": "AllowAnonymous" }
+      },
+      {
+        "path_prefix": "/icons/",
         "policies": { "unauthenticated_action": "AllowAnonymous" }
       },
       {
