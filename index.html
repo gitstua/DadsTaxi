@@ -23,11 +23,26 @@
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
     <link rel="stylesheet" href="/style.css" type="text/css" />
     <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+    
+    //notify
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous"></script>
 
     <!-- Add reference to the animation module. -->
     <script src="/azure-maps-animations.min.js"></script>
 
     <script type='text/javascript'>
+    
+        $.notify(
+        "Warning! You have 4 kids and 4 dogs!", 
+        { 
+            position:"top right",
+            autoHideDelay: 10000,
+            showDuration: 1000,
+            autoHide: false
+        }
+        );
+
         var map, points = [], numPoints = 8, currentGroupAnimation = null;
         var datasource = null;
 
