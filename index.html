@@ -36,7 +36,7 @@
         $.notify(
         "Warning! You have 4 kids and 4 dogs!", 
         { 
-            position:"top right",
+            position:"right",
             autoHideDelay: 10000,
             showDuration: 1000,
             autoHide: false
@@ -135,6 +135,10 @@
             if(type === 'interval'){
                 groupOptions.interval = 100;
             }
+
+            $.notify("Dog taken to dog wash", "warn");
+            $.notify("Kid taken to soccer", "warn");
+            $.notify("Gymnastics ended - kid collected", "warn");
 
             currentGroupAnimation = new atlas.animations.GroupAnimation(animations, groupOptions);
             currentGroupAnimation.play();
