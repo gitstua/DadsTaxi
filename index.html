@@ -39,10 +39,33 @@
             position:"right",
             autoHideDelay: 10000,
             showDuration: 1000,
-            autoHide: false
+            autoHide: true
         }
         );
 
+        // program to get a random item from an array
+
+        const taskList = [
+            '🐶 Dog: take to dogwash', '🐶 Dog: take to groomer', 
+            '🐶 Dog: collect from dogwash', '🐶 Dog: collect from groomer', 
+            '🧒 Kid: drop at soccer','🧒 Kid: collect from soccer', 
+            '🧒 Kid: drop at basketball','🧒 Kid: collect Kid from basketball', 
+            '🧒 Kid: drop at netball','🧒 Kid: collect from netball', 
+            '🧒 Kid: drop at school','🧒 Kid: collect from school', 
+            '🧒 Kid: drop at tennis','🧒 Kid: tennis collection',
+            '🧒 Kid: drop at soccer','🧒 Kid: collect from soccer', 
+            '🧒 Kid: drop at basketball','🧒 Kid: collect Kid from basketball', 
+            '🧒 Kid: drop at netball','🧒 Kid: collect from netball', 
+            '🧒 Kid: drop at school','🧒 Kid: collect from school', 
+            '🧒 Kid: drop at tennis','🧒 Kid: tennis collection',
+            '🎈🧒Kid: drop at party'
+        ];
+        const statusType = ['error','warn','info','info','info','info','info','info','info','info' ]; //info is more common
+        function getRandomElement(arr) {
+            // get random item
+            return item = arr[Math.floor(Math.random() * arr.length)];
+        }
+        
         var map, points = [], numPoints = 8, currentGroupAnimation = null;
         var datasource = null;
 
@@ -110,7 +133,6 @@
 
                 //Add the points to the data source.
                 datasource.add(points);
-
         }
 
 
@@ -134,11 +156,16 @@
 
             if(type === 'interval'){
                 groupOptions.interval = 100;
+                //generate notifications
+                for (var i = 0; i < numPoints; i++) {
+                    setTimeout(function(){$.notify(getRandomElement(taskList), getRandomElement(statusType));}, i* 1950);
+                }  
             }
-
-            $.notify("Dog taken to dog wash", "warn");
-            $.notify("Kid taken to soccer", "warn");
-            $.notify("Gymnastics ended - kid collected", "warn");
+            else{
+                for (var i = 0; i < numPoints; i++) {
+                    setTimeout(function(){$.notify(getRandomElement(taskList), getRandomElement(statusType));}, i* 300);
+                }  
+            }
 
             currentGroupAnimation = new atlas.animations.GroupAnimation(animations, groupOptions);
             currentGroupAnimation.play();
