@@ -1,6 +1,8 @@
 # DadsTaxi
 A fictional taxi
 
+<img src='https://img.shields.io/badge/follow-20%20billion-red?logo=twitter' />
+
 ## Samples and links
 - [snake line](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Animate%20a%20snakeline)
 
