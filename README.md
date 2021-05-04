@@ -1,18 +1,12 @@
 # DadsTaxi
 A fictional taxi
 
-<img src='https://img.shields.io/badge/follow-20%20billion-red?logo=twitter' />
+## What is it?
+Based on an idea from @lostdoco I created a site to show how busy he and I get driving around our kids
 
-## Samples and links
-- [snake line](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Animate%20a%20snakeline)
+## How did you build it?
+Using Azure it was super easy for me to get started. I just created an Azure App Service then added in some Azure Maps goodness using JavaScript.
 
-## Verify page load from remote locations using Azure Functions
-- Create a *linux* Azure Function using azure functions, enable "SCM Do Build During Deployment" in the Azure functions VSCode settings then follow this to screenshot your site https://anthonychu.ca/post/azure-functions-headless-chromium-puppeteer-playwright/
-  Playground for Puppeteer - https://try-puppeteer.appspot.com/
-- Modify DOM in Puppeteer - https://stackoverflow.com/a/48513690
-- How to pass variable into JS eval function - https://stackoverflow.com/questions/46088351/how-can-i-pass-variable-into-an-evaluate-function
+I used GitHub to store source code and GitHub Actions to build and deploy 
 
-## Healthcheck config
-We look for a file named /public/healthcheck.txt - when connected to other resoures such as a DB then the healthcheck should be deep enough to verify this but txt works for now
-- https://azure.github.io/AppService/2016/11/17/URL-Authorization-Rules.html
-- https://social.msdn.microsoft.com/Forums/en-US/80bad646-a8ec-411b-8549-7446e419f167/azure-ad-authentication?forum=AzureFunctions
+<img src='diagrams/dadstaxi.drawio.svg' style='border:1px lightgray solid' />
