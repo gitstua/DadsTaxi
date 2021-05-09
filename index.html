@@ -32,7 +32,6 @@
     <script src="/azure-maps-animations.min.js"></script>
 
     <script type='text/javascript'>
-    
         $.notify(
         "Warning! You have 4 kids and 4 dogs!", 
         { 
@@ -43,23 +42,27 @@
         }
         );
 
-        // program to get a random item from an array
 
-        const taskList = [
-            '🐶 Dog: take to dogwash', '🐶 Dog: take to groomer', 
-            '🐶 Dog: collect from dogwash', '🐶 Dog: collect from groomer', 
-            '🧒 Kid: drop at soccer','🧒 Kid: collect from soccer', 
-            '🧒 Kid: drop at basketball','🧒 Kid: collect Kid from basketball', 
-            '🧒 Kid: drop at netball','🧒 Kid: collect from netball', 
-            '🧒 Kid: drop at school','🧒 Kid: collect from school', 
-            '🧒 Kid: drop at tennis','🧒 Kid: tennis collection',
-            '🧒 Kid: drop at soccer','🧒 Kid: collect from soccer', 
-            '🧒 Kid: drop at basketball','🧒 Kid: collect Kid from basketball', 
-            '🧒 Kid: drop at netball','🧒 Kid: collect from netball', 
-            '🧒 Kid: drop at school','🧒 Kid: collect from school', 
-            '🧒 Kid: drop at tennis','🧒 Kid: tennis collection',
-            '🎈🧒Kid: drop at party'
-        ];
+        //get taskList from Cosmos
+        const requestUrl = `https://dadstaxifn1.azurewebsites.net/api/HttpTrigger1?code=m4JBZPSsFwaxVYYZVxlcGlLYwTeEWpPBmKom/7yGBYyIQ3GeOfYlPQ==&user='stu'`;
+
+        var jsonList = '';
+        var taskList = [];
+
+        fetch(requestUrl)
+        .then(function (response, jsonList) {
+            console.log(response);
+            jsonList = response.json();
+            console.log(jsonList);
+            for (i = 0; i < jsonList.length; i++) {
+                taskList.push(jsonList[i].task);
+            }
+        }, jsonList)
+        .catch(function (err) {
+            console.log(err);
+        });
+
+
         const statusType = ['error','warn','info','info','info','info','info','info','info','info' ]; //info is more common
         function getRandomElement(arr) {
             // get random item
@@ -186,7 +189,7 @@
 //            return [Math.random() * 360 - 180, Math.random() * 170 - 85];
             return [center.lng + getRandomOffSet(), center.lat + getRandomOffSet()];
         }
-    </script>
+    </script> 
 </head>
 <body onload="GetMap()">
     <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
