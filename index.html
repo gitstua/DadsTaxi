@@ -50,14 +50,13 @@
         var taskList = [];
 
         fetch(requestUrl)
-        .then(function (response, jsonList) {
-            console.log(response);
-            jsonList = response.json();
-            console.log(jsonList);
-            for (i = 0; i < jsonList.length; i++) {
-                taskList.push(jsonList[i].task);
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            for (i = 0; i < data.length; i++) {
+                taskList.push(data[i].task);
             }
-        }, jsonList)
+        })
         .catch(function (err) {
             console.log(err);
         });
